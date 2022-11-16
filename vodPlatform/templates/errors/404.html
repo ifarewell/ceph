@@ -1,0 +1,11 @@
+{% extends 'base.html' %} {% block content %}
+<div class="login-wrapper">
+    <div class="card-title">
+        <h3>404</h3>
+        <span class="error-message">Page Not Found</span>
+    </div>
+    <div>
+        {% if session.get('access_key')!=None %} Go <a href="{{ url_for('index') }}">back</a> and try again. {% else %} Go <a href="{{ url_for('login') }}">back</a> and try again. {% endif %}
+    </div>
+</div>
+{% endblock %}

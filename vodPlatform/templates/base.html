@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% block head %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOD教学视频平台</title>
+
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" type="text/css"> {% endblock %}
+</head>
+
+<body class="page-container" style="background-image: url(/static/images/background.png); background-repeat:no-repeat;
+background-size:100% 100%; background-attachment: fixed;">
+    <div class='nav-container'>
+        <ul class='nav-list-left'>
+            <li class='nav-list-item-left'>
+                <a href="{{ url_for('index') }}" class="nav-list-left-title nav-entry">
+                    <img src="{{ url_for('static', filename='favicon.ico') }}" height="36px" width="36px" />
+                    <div class="nav-list-left-title-text">
+                        VOD教学视频平台
+                    </div>
+                </a>
+        </ul>
+        <ul class="nav-list-right">
+            {% if session.get('access_key')!=None %}
+            <li class='nav-list-item-right'>
+                <div class="nav-entry">{{session['access_key']}}</div>
+            </li>
+            <li class='nav-list-item-right'>
+                <a href="{{ url_for('logout') }}" class="nav-entry">退出</a>
+            </li>
+            {% endif %}
+        </ul>
+    </div>
+    <div class="main-content-wrapper">
+        {% block content %}{% endblock %}
+    </div>
+    <footer class="footer">
+        &copy; 2022 卢肇
+    </footer>
+</body>
+
+</html>

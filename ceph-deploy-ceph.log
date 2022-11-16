@@ -1,0 +1,346 @@
+[2022-06-24 17:52:11,313][ceph_deploy.conf][DEBUG ] found configuration file at: /home/ubuntu/.cephdeploy.conf
+[2022-06-24 17:52:11,314][ceph_deploy.cli][INFO  ] Invoked (2.0.1): /usr/bin/ceph-deploy new myceph
+[2022-06-24 17:52:11,314][ceph_deploy.cli][INFO  ] ceph-deploy options:
+[2022-06-24 17:52:11,315][ceph_deploy.cli][INFO  ]  username                      : None
+[2022-06-24 17:52:11,315][ceph_deploy.cli][INFO  ]  verbose                       : False
+[2022-06-24 17:52:11,315][ceph_deploy.cli][INFO  ]  overwrite_conf                : False
+[2022-06-24 17:52:11,315][ceph_deploy.cli][INFO  ]  quiet                         : False
+[2022-06-24 17:52:11,316][ceph_deploy.cli][INFO  ]  cd_conf                       : <ceph_deploy.conf.cephdeploy.Conf instance at 0x7ffb9f9b5190>
+[2022-06-24 17:52:11,316][ceph_deploy.cli][INFO  ]  cluster                       : ceph
+[2022-06-24 17:52:11,316][ceph_deploy.cli][INFO  ]  ssh_copykey                   : True
+[2022-06-24 17:52:11,316][ceph_deploy.cli][INFO  ]  mon                           : ['myceph']
+[2022-06-24 17:52:11,316][ceph_deploy.cli][INFO  ]  func                          : <function new at 0x7ffb9f8dacd0>
+[2022-06-24 17:52:11,316][ceph_deploy.cli][INFO  ]  public_network                : None
+[2022-06-24 17:52:11,317][ceph_deploy.cli][INFO  ]  ceph_conf                     : None
+[2022-06-24 17:52:11,317][ceph_deploy.cli][INFO  ]  cluster_network               : None
+[2022-06-24 17:52:11,317][ceph_deploy.cli][INFO  ]  default_release               : False
+[2022-06-24 17:52:11,317][ceph_deploy.cli][INFO  ]  fsid                          : None
+[2022-06-24 17:52:11,317][ceph_deploy.new][DEBUG ] Creating new cluster named ceph
+[2022-06-24 17:52:11,318][ceph_deploy.new][INFO  ] making sure passwordless SSH succeeds
+[2022-06-24 17:52:11,342][myceph][DEBUG ] connection detected need for sudo
+[2022-06-24 17:52:11,367][myceph][DEBUG ] connected to host: myceph 
+[2022-06-24 17:52:11,368][myceph][DEBUG ] detect platform information from remote host
+[2022-06-24 17:52:11,387][myceph][DEBUG ] detect machine type
+[2022-06-24 17:52:11,392][myceph][DEBUG ] find the location of an executable
+[2022-06-24 17:52:11,394][myceph][INFO  ] Running command: sudo /bin/ip link show
+[2022-06-24 17:52:11,407][myceph][INFO  ] Running command: sudo /bin/ip addr show
+[2022-06-24 17:52:11,417][myceph][DEBUG ] IP addresses found: [u'172.17.0.12']
+[2022-06-24 17:52:11,418][ceph_deploy.new][DEBUG ] Resolving host myceph
+[2022-06-24 17:52:11,418][ceph_deploy.new][DEBUG ] Monitor myceph at 172.17.0.12
+[2022-06-24 17:52:11,418][ceph_deploy.new][DEBUG ] Monitor initial members are ['myceph']
+[2022-06-24 17:52:11,424][ceph_deploy.new][DEBUG ] Monitor addrs are ['172.17.0.12']
+[2022-06-24 17:52:11,424][ceph_deploy.new][DEBUG ] Creating a random mon key...
+[2022-06-24 17:52:11,424][ceph_deploy.new][DEBUG ] Writing monitor keyring to ceph.mon.keyring...
+[2022-06-24 17:52:11,425][ceph_deploy.new][DEBUG ] Writing initial config to ceph.conf...
+[2022-06-24 17:52:56,238][ceph_deploy.conf][DEBUG ] found configuration file at: /home/ubuntu/.cephdeploy.conf
+[2022-06-24 17:52:56,239][ceph_deploy.cli][INFO  ] Invoked (2.0.1): /usr/bin/ceph-deploy mon create-initial
+[2022-06-24 17:52:56,239][ceph_deploy.cli][INFO  ] ceph-deploy options:
+[2022-06-24 17:52:56,240][ceph_deploy.cli][INFO  ]  username                      : None
+[2022-06-24 17:52:56,240][ceph_deploy.cli][INFO  ]  verbose                       : False
+[2022-06-24 17:52:56,240][ceph_deploy.cli][INFO  ]  overwrite_conf                : False
+[2022-06-24 17:52:56,240][ceph_deploy.cli][INFO  ]  subcommand                    : create-initial
+[2022-06-24 17:52:56,241][ceph_deploy.cli][INFO  ]  quiet                         : False
+[2022-06-24 17:52:56,241][ceph_deploy.cli][INFO  ]  cd_conf                       : <ceph_deploy.conf.cephdeploy.Conf instance at 0x7f673c2ff8c0>
+[2022-06-24 17:52:56,241][ceph_deploy.cli][INFO  ]  cluster                       : ceph
+[2022-06-24 17:52:56,241][ceph_deploy.cli][INFO  ]  func                          : <function mon at 0x7f673c770cd0>
+[2022-06-24 17:52:56,241][ceph_deploy.cli][INFO  ]  ceph_conf                     : None
+[2022-06-24 17:52:56,242][ceph_deploy.cli][INFO  ]  keyrings                      : None
+[2022-06-24 17:52:56,242][ceph_deploy.cli][INFO  ]  default_release               : False
+[2022-06-24 17:52:56,242][ceph_deploy.mon][DEBUG ] Deploying mon, cluster ceph hosts myceph
+[2022-06-24 17:52:56,243][ceph_deploy.mon][DEBUG ] detecting platform for host myceph ...
+[2022-06-24 17:52:56,269][myceph][DEBUG ] connection detected need for sudo
+[2022-06-24 17:52:56,295][myceph][DEBUG ] connected to host: myceph 
+[2022-06-24 17:52:56,296][myceph][DEBUG ] detect platform information from remote host
+[2022-06-24 17:52:56,315][myceph][DEBUG ] detect machine type
+[2022-06-24 17:52:56,319][myceph][DEBUG ] find the location of an executable
+[2022-06-24 17:52:56,320][ceph_deploy.mon][INFO  ] distro info: Ubuntu 18.04 bionic
+[2022-06-24 17:52:56,321][myceph][DEBUG ] determining if provided host has same hostname in remote
+[2022-06-24 17:52:56,321][myceph][DEBUG ] get remote short hostname
+[2022-06-24 17:52:56,321][myceph][DEBUG ] deploying mon to myceph
+[2022-06-24 17:52:56,322][myceph][DEBUG ] get remote short hostname
+[2022-06-24 17:52:56,322][myceph][DEBUG ] remote hostname: myceph
+[2022-06-24 17:52:56,323][myceph][DEBUG ] write cluster configuration to /etc/ceph/{cluster}.conf
+[2022-06-24 17:52:56,324][myceph][DEBUG ] create the mon path if it does not exist
+[2022-06-24 17:52:56,325][myceph][DEBUG ] checking for done path: /var/lib/ceph/mon/ceph-myceph/done
+[2022-06-24 17:52:56,326][myceph][DEBUG ] done path does not exist: /var/lib/ceph/mon/ceph-myceph/done
+[2022-06-24 17:52:56,326][myceph][INFO  ] creating keyring file: /var/lib/ceph/tmp/ceph-myceph.mon.keyring
+[2022-06-24 17:52:56,327][myceph][DEBUG ] create the monitor keyring file
+[2022-06-24 17:52:56,329][myceph][INFO  ] Running command: sudo ceph-mon --cluster ceph --mkfs -i myceph --keyring /var/lib/ceph/tmp/ceph-myceph.mon.keyring --setuser 64045 --setgroup 64045
+[2022-06-24 17:52:56,448][myceph][INFO  ] unlinking keyring file /var/lib/ceph/tmp/ceph-myceph.mon.keyring
+[2022-06-24 17:52:56,449][myceph][DEBUG ] create a done file to avoid re-doing the mon deployment
+[2022-06-24 17:52:56,450][myceph][DEBUG ] create the init path if it does not exist
+[2022-06-24 17:52:56,452][myceph][INFO  ] Running command: sudo systemctl enable ceph.target
+[2022-06-24 17:52:56,780][myceph][INFO  ] Running command: sudo systemctl enable ceph-mon@myceph
+[2022-06-24 17:52:57,100][myceph][INFO  ] Running command: sudo systemctl start ceph-mon@myceph
+[2022-06-24 17:52:59,142][myceph][INFO  ] Running command: sudo ceph --cluster=ceph --admin-daemon /var/run/ceph/ceph-mon.myceph.asok mon_status
+[2022-06-24 17:52:59,258][myceph][DEBUG ] ********************************************************************************
+[2022-06-24 17:52:59,258][myceph][DEBUG ] status for monitor: mon.myceph
+[2022-06-24 17:52:59,259][myceph][DEBUG ] {
+[2022-06-24 17:52:59,259][myceph][DEBUG ]   "election_epoch": 3, 
+[2022-06-24 17:52:59,259][myceph][DEBUG ]   "extra_probe_peers": [], 
+[2022-06-24 17:52:59,259][myceph][DEBUG ]   "feature_map": {
+[2022-06-24 17:52:59,260][myceph][DEBUG ]     "mon": [
+[2022-06-24 17:52:59,260][myceph][DEBUG ]       {
+[2022-06-24 17:52:59,260][myceph][DEBUG ]         "features": "0x3ffddff8ffacfffb", 
+[2022-06-24 17:52:59,260][myceph][DEBUG ]         "num": 1, 
+[2022-06-24 17:52:59,260][myceph][DEBUG ]         "release": "luminous"
+[2022-06-24 17:52:59,260][myceph][DEBUG ]       }
+[2022-06-24 17:52:59,261][myceph][DEBUG ]     ]
+[2022-06-24 17:52:59,261][myceph][DEBUG ]   }, 
+[2022-06-24 17:52:59,261][myceph][DEBUG ]   "features": {
+[2022-06-24 17:52:59,261][myceph][DEBUG ]     "quorum_con": "4611087854031667195", 
+[2022-06-24 17:52:59,261][myceph][DEBUG ]     "quorum_mon": [
+[2022-06-24 17:52:59,261][myceph][DEBUG ]       "kraken", 
+[2022-06-24 17:52:59,261][myceph][DEBUG ]       "luminous", 
+[2022-06-24 17:52:59,262][myceph][DEBUG ]       "mimic", 
+[2022-06-24 17:52:59,262][myceph][DEBUG ]       "osdmap-prune"
+[2022-06-24 17:52:59,262][myceph][DEBUG ]     ], 
+[2022-06-24 17:52:59,262][myceph][DEBUG ]     "required_con": "144115738102218752", 
+[2022-06-24 17:52:59,262][myceph][DEBUG ]     "required_mon": [
+[2022-06-24 17:52:59,262][myceph][DEBUG ]       "kraken", 
+[2022-06-24 17:52:59,263][myceph][DEBUG ]       "luminous", 
+[2022-06-24 17:52:59,263][myceph][DEBUG ]       "mimic", 
+[2022-06-24 17:52:59,263][myceph][DEBUG ]       "osdmap-prune"
+[2022-06-24 17:52:59,263][myceph][DEBUG ]     ]
+[2022-06-24 17:52:59,263][myceph][DEBUG ]   }, 
+[2022-06-24 17:52:59,263][myceph][DEBUG ]   "monmap": {
+[2022-06-24 17:52:59,264][myceph][DEBUG ]     "created": "2022-06-24 17:52:56.363337", 
+[2022-06-24 17:52:59,264][myceph][DEBUG ]     "epoch": 1, 
+[2022-06-24 17:52:59,264][myceph][DEBUG ]     "features": {
+[2022-06-24 17:52:59,264][myceph][DEBUG ]       "optional": [], 
+[2022-06-24 17:52:59,264][myceph][DEBUG ]       "persistent": [
+[2022-06-24 17:52:59,264][myceph][DEBUG ]         "kraken", 
+[2022-06-24 17:52:59,264][myceph][DEBUG ]         "luminous", 
+[2022-06-24 17:52:59,265][myceph][DEBUG ]         "mimic", 
+[2022-06-24 17:52:59,265][myceph][DEBUG ]         "osdmap-prune"
+[2022-06-24 17:52:59,265][myceph][DEBUG ]       ]
+[2022-06-24 17:52:59,265][myceph][DEBUG ]     }, 
+[2022-06-24 17:52:59,265][myceph][DEBUG ]     "fsid": "1a97f650-6e52-4328-a798-7cf2bb8ffdbc", 
+[2022-06-24 17:52:59,265][myceph][DEBUG ]     "modified": "2022-06-24 17:52:56.363337", 
+[2022-06-24 17:52:59,265][myceph][DEBUG ]     "mons": [
+[2022-06-24 17:52:59,266][myceph][DEBUG ]       {
+[2022-06-24 17:52:59,266][myceph][DEBUG ]         "addr": "172.17.0.12:6789/0", 
+[2022-06-24 17:52:59,266][myceph][DEBUG ]         "name": "myceph", 
+[2022-06-24 17:52:59,266][myceph][DEBUG ]         "public_addr": "172.17.0.12:6789/0", 
+[2022-06-24 17:52:59,266][myceph][DEBUG ]         "rank": 0
+[2022-06-24 17:52:59,266][myceph][DEBUG ]       }
+[2022-06-24 17:52:59,267][myceph][DEBUG ]     ]
+[2022-06-24 17:52:59,267][myceph][DEBUG ]   }, 
+[2022-06-24 17:52:59,267][myceph][DEBUG ]   "name": "myceph", 
+[2022-06-24 17:52:59,267][myceph][DEBUG ]   "outside_quorum": [], 
+[2022-06-24 17:52:59,267][myceph][DEBUG ]   "quorum": [
+[2022-06-24 17:52:59,267][myceph][DEBUG ]     0
+[2022-06-24 17:52:59,268][myceph][DEBUG ]   ], 
+[2022-06-24 17:52:59,268][myceph][DEBUG ]   "rank": 0, 
+[2022-06-24 17:52:59,268][myceph][DEBUG ]   "state": "leader", 
+[2022-06-24 17:52:59,268][myceph][DEBUG ]   "sync_provider": []
+[2022-06-24 17:52:59,268][myceph][DEBUG ] }
+[2022-06-24 17:52:59,269][myceph][DEBUG ] ********************************************************************************
+[2022-06-24 17:52:59,269][myceph][INFO  ] monitor: mon.myceph is running
+[2022-06-24 17:52:59,270][myceph][INFO  ] Running command: sudo ceph --cluster=ceph --admin-daemon /var/run/ceph/ceph-mon.myceph.asok mon_status
+[2022-06-24 17:52:59,386][ceph_deploy.mon][INFO  ] processing monitor mon.myceph
+[2022-06-24 17:52:59,415][myceph][DEBUG ] connection detected need for sudo
+[2022-06-24 17:52:59,440][myceph][DEBUG ] connected to host: myceph 
+[2022-06-24 17:52:59,441][myceph][DEBUG ] detect platform information from remote host
+[2022-06-24 17:52:59,460][myceph][DEBUG ] detect machine type
+[2022-06-24 17:52:59,464][myceph][DEBUG ] find the location of an executable
+[2022-06-24 17:52:59,466][myceph][INFO  ] Running command: sudo ceph --cluster=ceph --admin-daemon /var/run/ceph/ceph-mon.myceph.asok mon_status
+[2022-06-24 17:52:59,582][ceph_deploy.mon][INFO  ] mon.myceph monitor has reached quorum!
+[2022-06-24 17:52:59,582][ceph_deploy.mon][INFO  ] all initial monitors are running and have formed quorum
+[2022-06-24 17:52:59,583][ceph_deploy.mon][INFO  ] Running gatherkeys...
+[2022-06-24 17:52:59,588][ceph_deploy.gatherkeys][INFO  ] Storing keys in temp directory /tmp/tmpLY0cSf
+[2022-06-24 17:52:59,614][myceph][DEBUG ] connection detected need for sudo
+[2022-06-24 17:52:59,639][myceph][DEBUG ] connected to host: myceph 
+[2022-06-24 17:52:59,640][myceph][DEBUG ] detect platform information from remote host
+[2022-06-24 17:52:59,659][myceph][DEBUG ] detect machine type
+[2022-06-24 17:52:59,663][myceph][DEBUG ] get remote short hostname
+[2022-06-24 17:52:59,664][myceph][DEBUG ] fetch remote file
+[2022-06-24 17:52:59,665][myceph][INFO  ] Running command: sudo /usr/bin/ceph --connect-timeout=25 --cluster=ceph --admin-daemon=/var/run/ceph/ceph-mon.myceph.asok mon_status
+[2022-06-24 17:52:59,782][myceph][INFO  ] Running command: sudo /usr/bin/ceph --connect-timeout=25 --cluster=ceph --name mon. --keyring=/var/lib/ceph/mon/ceph-myceph/keyring auth get client.admin
+[2022-06-24 17:53:00,050][myceph][INFO  ] Running command: sudo /usr/bin/ceph --connect-timeout=25 --cluster=ceph --name mon. --keyring=/var/lib/ceph/mon/ceph-myceph/keyring auth get client.bootstrap-mds
+[2022-06-24 17:53:00,318][myceph][INFO  ] Running command: sudo /usr/bin/ceph --connect-timeout=25 --cluster=ceph --name mon. --keyring=/var/lib/ceph/mon/ceph-myceph/keyring auth get client.bootstrap-mgr
+[2022-06-24 17:53:00,535][myceph][INFO  ] Running command: sudo /usr/bin/ceph --connect-timeout=25 --cluster=ceph --name mon. --keyring=/var/lib/ceph/mon/ceph-myceph/keyring auth get client.bootstrap-osd
+[2022-06-24 17:53:00,752][myceph][INFO  ] Running command: sudo /usr/bin/ceph --connect-timeout=25 --cluster=ceph --name mon. --keyring=/var/lib/ceph/mon/ceph-myceph/keyring auth get client.bootstrap-rgw
+[2022-06-24 17:53:00,968][ceph_deploy.gatherkeys][INFO  ] Storing ceph.client.admin.keyring
+[2022-06-24 17:53:00,969][ceph_deploy.gatherkeys][INFO  ] Storing ceph.bootstrap-mds.keyring
+[2022-06-24 17:53:00,969][ceph_deploy.gatherkeys][INFO  ] Storing ceph.bootstrap-mgr.keyring
+[2022-06-24 17:53:00,970][ceph_deploy.gatherkeys][INFO  ] keyring 'ceph.mon.keyring' already exists
+[2022-06-24 17:53:00,970][ceph_deploy.gatherkeys][INFO  ] Storing ceph.bootstrap-osd.keyring
+[2022-06-24 17:53:00,970][ceph_deploy.gatherkeys][INFO  ] Storing ceph.bootstrap-rgw.keyring
+[2022-06-24 17:53:00,971][ceph_deploy.gatherkeys][INFO  ] Destroy temp directory /tmp/tmpLY0cSf
+[2022-06-24 17:53:11,162][ceph_deploy.conf][DEBUG ] found configuration file at: /home/ubuntu/.cephdeploy.conf
+[2022-06-24 17:53:11,163][ceph_deploy.cli][INFO  ] Invoked (2.0.1): /usr/bin/ceph-deploy admin ceph1
+[2022-06-24 17:53:11,163][ceph_deploy.cli][INFO  ] ceph-deploy options:
+[2022-06-24 17:53:11,163][ceph_deploy.cli][INFO  ]  username                      : None
+[2022-06-24 17:53:11,164][ceph_deploy.cli][INFO  ]  verbose                       : False
+[2022-06-24 17:53:11,164][ceph_deploy.cli][INFO  ]  overwrite_conf                : False
+[2022-06-24 17:53:11,164][ceph_deploy.cli][INFO  ]  quiet                         : False
+[2022-06-24 17:53:11,164][ceph_deploy.cli][INFO  ]  cd_conf                       : <ceph_deploy.conf.cephdeploy.Conf instance at 0x7fc3e69ed8c0>
+[2022-06-24 17:53:11,165][ceph_deploy.cli][INFO  ]  cluster                       : ceph
+[2022-06-24 17:53:11,165][ceph_deploy.cli][INFO  ]  client                        : ['ceph1']
+[2022-06-24 17:53:11,165][ceph_deploy.cli][INFO  ]  func                          : <function admin at 0x7fc3e72f5c50>
+[2022-06-24 17:53:11,165][ceph_deploy.cli][INFO  ]  ceph_conf                     : None
+[2022-06-24 17:53:11,165][ceph_deploy.cli][INFO  ]  default_release               : False
+[2022-06-24 17:53:11,166][ceph_deploy.admin][DEBUG ] Pushing admin keys and conf to ceph1
+[2022-06-24 17:53:11,195][ceph_deploy.admin][ERROR ] connecting to host: ceph1 resulted in errors: HostNotFound ceph1
+[2022-06-24 17:53:11,196][ceph_deploy][ERROR ] GenericError: Failed to configure 1 admin hosts
+
+[2022-06-24 17:53:19,227][ceph_deploy.conf][DEBUG ] found configuration file at: /home/ubuntu/.cephdeploy.conf
+[2022-06-24 17:53:19,228][ceph_deploy.cli][INFO  ] Invoked (2.0.1): /usr/bin/ceph-deploy admin myceph
+[2022-06-24 17:53:19,228][ceph_deploy.cli][INFO  ] ceph-deploy options:
+[2022-06-24 17:53:19,228][ceph_deploy.cli][INFO  ]  username                      : None
+[2022-06-24 17:53:19,228][ceph_deploy.cli][INFO  ]  verbose                       : False
+[2022-06-24 17:53:19,229][ceph_deploy.cli][INFO  ]  overwrite_conf                : False
+[2022-06-24 17:53:19,229][ceph_deploy.cli][INFO  ]  quiet                         : False
+[2022-06-24 17:53:19,229][ceph_deploy.cli][INFO  ]  cd_conf                       : <ceph_deploy.conf.cephdeploy.Conf instance at 0x7fe1f37bc8c0>
+[2022-06-24 17:53:19,229][ceph_deploy.cli][INFO  ]  cluster                       : ceph
+[2022-06-24 17:53:19,229][ceph_deploy.cli][INFO  ]  client                        : ['myceph']
+[2022-06-24 17:53:19,230][ceph_deploy.cli][INFO  ]  func                          : <function admin at 0x7fe1f40c4c50>
+[2022-06-24 17:53:19,230][ceph_deploy.cli][INFO  ]  ceph_conf                     : None
+[2022-06-24 17:53:19,230][ceph_deploy.cli][INFO  ]  default_release               : False
+[2022-06-24 17:53:19,230][ceph_deploy.admin][DEBUG ] Pushing admin keys and conf to myceph
+[2022-06-24 17:53:19,254][myceph][DEBUG ] connection detected need for sudo
+[2022-06-24 17:53:19,279][myceph][DEBUG ] connected to host: myceph 
+[2022-06-24 17:53:19,280][myceph][DEBUG ] detect platform information from remote host
+[2022-06-24 17:53:19,299][myceph][DEBUG ] detect machine type
+[2022-06-24 17:53:19,303][myceph][DEBUG ] write cluster configuration to /etc/ceph/{cluster}.conf
+[2022-06-24 17:53:29,123][ceph_deploy.conf][DEBUG ] found configuration file at: /home/ubuntu/.cephdeploy.conf
+[2022-06-24 17:53:29,124][ceph_deploy.cli][INFO  ] Invoked (2.0.1): /usr/bin/ceph-deploy mgr create myceph
+[2022-06-24 17:53:29,124][ceph_deploy.cli][INFO  ] ceph-deploy options:
+[2022-06-24 17:53:29,124][ceph_deploy.cli][INFO  ]  username                      : None
+[2022-06-24 17:53:29,125][ceph_deploy.cli][INFO  ]  verbose                       : False
+[2022-06-24 17:53:29,125][ceph_deploy.cli][INFO  ]  mgr                           : [('myceph', 'myceph')]
+[2022-06-24 17:53:29,125][ceph_deploy.cli][INFO  ]  overwrite_conf                : False
+[2022-06-24 17:53:29,125][ceph_deploy.cli][INFO  ]  subcommand                    : create
+[2022-06-24 17:53:29,125][ceph_deploy.cli][INFO  ]  quiet                         : False
+[2022-06-24 17:53:29,126][ceph_deploy.cli][INFO  ]  cd_conf                       : <ceph_deploy.conf.cephdeploy.Conf instance at 0x7f7ad3fbbbe0>
+[2022-06-24 17:53:29,126][ceph_deploy.cli][INFO  ]  cluster                       : ceph
+[2022-06-24 17:53:29,126][ceph_deploy.cli][INFO  ]  func                          : <function mgr at 0x7f7ad4418350>
+[2022-06-24 17:53:29,126][ceph_deploy.cli][INFO  ]  ceph_conf                     : None
+[2022-06-24 17:53:29,126][ceph_deploy.cli][INFO  ]  default_release               : False
+[2022-06-24 17:53:29,126][ceph_deploy.mgr][DEBUG ] Deploying mgr, cluster ceph hosts myceph:myceph
+[2022-06-24 17:53:29,151][myceph][DEBUG ] connection detected need for sudo
+[2022-06-24 17:53:29,177][myceph][DEBUG ] connected to host: myceph 
+[2022-06-24 17:53:29,177][myceph][DEBUG ] detect platform information from remote host
+[2022-06-24 17:53:29,197][myceph][DEBUG ] detect machine type
+[2022-06-24 17:53:29,201][ceph_deploy.mgr][INFO  ] Distro info: Ubuntu 18.04 bionic
+[2022-06-24 17:53:29,201][ceph_deploy.mgr][DEBUG ] remote host will use systemd
+[2022-06-24 17:53:29,202][ceph_deploy.mgr][DEBUG ] deploying mgr bootstrap to myceph
+[2022-06-24 17:53:29,202][myceph][DEBUG ] write cluster configuration to /etc/ceph/{cluster}.conf
+[2022-06-24 17:53:29,204][myceph][WARNING] mgr keyring does not exist yet, creating one
+[2022-06-24 17:53:29,205][myceph][DEBUG ] create a keyring file
+[2022-06-24 17:53:29,206][myceph][DEBUG ] create path recursively if it doesn't exist
+[2022-06-24 17:53:29,208][myceph][INFO  ] Running command: sudo ceph --cluster ceph --name client.bootstrap-mgr --keyring /var/lib/ceph/bootstrap-mgr/ceph.keyring auth get-or-create mgr.myceph mon allow profile mgr osd allow * mds allow * -o /var/lib/ceph/mgr/ceph-myceph/keyring
+[2022-06-24 17:53:29,479][myceph][INFO  ] Running command: sudo systemctl enable ceph-mgr@myceph
+[2022-06-24 17:53:29,498][myceph][WARNING] Created symlink /etc/systemd/system/ceph-mgr.target.wants/ceph-mgr@myceph.service → /lib/systemd/system/ceph-mgr@.service.
+[2022-06-24 17:53:29,764][myceph][INFO  ] Running command: sudo systemctl start ceph-mgr@myceph
+[2022-06-24 17:53:29,801][myceph][INFO  ] Running command: sudo systemctl enable ceph.target
+[2022-06-24 18:08:18,341][ceph_deploy.conf][DEBUG ] found configuration file at: /home/ubuntu/.cephdeploy.conf
+[2022-06-24 18:08:18,342][ceph_deploy.cli][INFO  ] Invoked (2.0.1): /usr/bin/ceph-deploy osd create --data /dev/vdb myceph
+[2022-06-24 18:08:18,342][ceph_deploy.cli][INFO  ] ceph-deploy options:
+[2022-06-24 18:08:18,342][ceph_deploy.cli][INFO  ]  verbose                       : False
+[2022-06-24 18:08:18,343][ceph_deploy.cli][INFO  ]  bluestore                     : None
+[2022-06-24 18:08:18,343][ceph_deploy.cli][INFO  ]  cd_conf                       : <ceph_deploy.conf.cephdeploy.Conf instance at 0x7f7f95696eb0>
+[2022-06-24 18:08:18,343][ceph_deploy.cli][INFO  ]  cluster                       : ceph
+[2022-06-24 18:08:18,343][ceph_deploy.cli][INFO  ]  fs_type                       : xfs
+[2022-06-24 18:08:18,343][ceph_deploy.cli][INFO  ]  block_wal                     : None
+[2022-06-24 18:08:18,343][ceph_deploy.cli][INFO  ]  default_release               : False
+[2022-06-24 18:08:18,344][ceph_deploy.cli][INFO  ]  username                      : None
+[2022-06-24 18:08:18,344][ceph_deploy.cli][INFO  ]  journal                       : None
+[2022-06-24 18:08:18,344][ceph_deploy.cli][INFO  ]  subcommand                    : create
+[2022-06-24 18:08:18,344][ceph_deploy.cli][INFO  ]  host                          : myceph
+[2022-06-24 18:08:18,345][ceph_deploy.cli][INFO  ]  filestore                     : None
+[2022-06-24 18:08:18,345][ceph_deploy.cli][INFO  ]  func                          : <function osd at 0x7f7f9566f450>
+[2022-06-24 18:08:18,345][ceph_deploy.cli][INFO  ]  ceph_conf                     : None
+[2022-06-24 18:08:18,345][ceph_deploy.cli][INFO  ]  zap_disk                      : False
+[2022-06-24 18:08:18,345][ceph_deploy.cli][INFO  ]  data                          : /dev/vdb
+[2022-06-24 18:08:18,345][ceph_deploy.cli][INFO  ]  block_db                      : None
+[2022-06-24 18:08:18,346][ceph_deploy.cli][INFO  ]  dmcrypt                       : False
+[2022-06-24 18:08:18,346][ceph_deploy.cli][INFO  ]  overwrite_conf                : False
+[2022-06-24 18:08:18,346][ceph_deploy.cli][INFO  ]  dmcrypt_key_dir               : /etc/ceph/dmcrypt-keys
+[2022-06-24 18:08:18,346][ceph_deploy.cli][INFO  ]  quiet                         : False
+[2022-06-24 18:08:18,346][ceph_deploy.cli][INFO  ]  debug                         : False
+[2022-06-24 18:08:18,347][ceph_deploy.osd][DEBUG ] Creating OSD on cluster ceph with data device /dev/vdb
+[2022-06-24 18:08:18,373][myceph][DEBUG ] connection detected need for sudo
+[2022-06-24 18:08:18,399][myceph][DEBUG ] connected to host: myceph 
+[2022-06-24 18:08:18,400][myceph][DEBUG ] detect platform information from remote host
+[2022-06-24 18:08:18,419][myceph][DEBUG ] detect machine type
+[2022-06-24 18:08:18,423][myceph][DEBUG ] find the location of an executable
+[2022-06-24 18:08:18,424][ceph_deploy.osd][INFO  ] Distro info: Ubuntu 18.04 bionic
+[2022-06-24 18:08:18,425][ceph_deploy.osd][DEBUG ] Deploying osd to myceph
+[2022-06-24 18:08:18,425][myceph][DEBUG ] write cluster configuration to /etc/ceph/{cluster}.conf
+[2022-06-24 18:08:18,427][myceph][WARNING] osd keyring does not exist yet, creating one
+[2022-06-24 18:08:18,427][myceph][DEBUG ] create a keyring file
+[2022-06-24 18:08:18,429][myceph][DEBUG ] find the location of an executable
+[2022-06-24 18:08:18,430][myceph][INFO  ] Running command: sudo /usr/sbin/ceph-volume --cluster ceph lvm create --bluestore --data /dev/vdb
+[2022-06-24 18:08:18,850][myceph][WARNING] Running command: /usr/bin/ceph-authtool --gen-print-key
+[2022-06-24 18:08:18,851][myceph][WARNING] Running command: /usr/bin/ceph --cluster ceph --name client.bootstrap-osd --keyring /var/lib/ceph/bootstrap-osd/ceph.keyring -i - osd new d10a34ed-08f8-4ee8-b158-09c1911ae543
+[2022-06-24 18:08:19,174][myceph][WARNING] Running command: /sbin/vgcreate --force --yes ceph-6e12ce95-5d43-43c5-95fe-b00de6d0328c /dev/vdb
+[2022-06-24 18:08:19,174][myceph][WARNING]  stdout: Wiping ext4 signature on /dev/vdb.
+[2022-06-24 18:08:19,190][myceph][WARNING]  stdout: Physical volume "/dev/vdb" successfully created.
+[2022-06-24 18:08:19,222][myceph][WARNING]  stdout: Volume group "ceph-6e12ce95-5d43-43c5-95fe-b00de6d0328c" successfully created
+[2022-06-24 18:08:19,287][myceph][WARNING] Running command: /sbin/lvcreate --yes -l 100%FREE -n osd-block-d10a34ed-08f8-4ee8-b158-09c1911ae543 ceph-6e12ce95-5d43-43c5-95fe-b00de6d0328c
+[2022-06-24 18:08:19,453][myceph][WARNING]  stdout: Logical volume "osd-block-d10a34ed-08f8-4ee8-b158-09c1911ae543" created.
+[2022-06-24 18:08:20,175][myceph][WARNING] Running command: /usr/bin/ceph-authtool --gen-print-key
+[2022-06-24 18:08:20,207][myceph][WARNING] Running command: /bin/mount -t tmpfs tmpfs /var/lib/ceph/osd/ceph-0
+[2022-06-24 18:08:20,225][myceph][WARNING] Running command: /bin/chown -h ceph:ceph /dev/ceph-6e12ce95-5d43-43c5-95fe-b00de6d0328c/osd-block-d10a34ed-08f8-4ee8-b158-09c1911ae543
+[2022-06-24 18:08:20,229][myceph][WARNING] Running command: /bin/chown -R ceph:ceph /dev/dm-0
+[2022-06-24 18:08:20,237][myceph][WARNING] Running command: /bin/ln -s /dev/ceph-6e12ce95-5d43-43c5-95fe-b00de6d0328c/osd-block-d10a34ed-08f8-4ee8-b158-09c1911ae543 /var/lib/ceph/osd/ceph-0/block
+[2022-06-24 18:08:20,245][myceph][WARNING] Running command: /usr/bin/ceph --cluster ceph --name client.bootstrap-osd --keyring /var/lib/ceph/bootstrap-osd/ceph.keyring mon getmap -o /var/lib/ceph/osd/ceph-0/activate.monmap
+[2022-06-24 18:08:20,510][myceph][WARNING]  stderr: got monmap epoch 1
+[2022-06-24 18:08:20,510][myceph][WARNING] Running command: /usr/bin/ceph-authtool /var/lib/ceph/osd/ceph-0/keyring --create-keyring --name osd.0 --add-key AQASjbVirYhnMRAA+GZBMGJeJA8OZGTuZrRQgA==
+[2022-06-24 18:08:20,512][myceph][WARNING]  stdout: creating /var/lib/ceph/osd/ceph-0/keyring
+[2022-06-24 18:08:20,513][myceph][WARNING]  stdout: added entity osd.0 auth auth(auid = 18446744073709551615 key=AQASjbVirYhnMRAA+GZBMGJeJA8OZGTuZrRQgA== with 0 caps)
+[2022-06-24 18:08:20,523][myceph][WARNING] Running command: /bin/chown -R ceph:ceph /var/lib/ceph/osd/ceph-0/keyring
+[2022-06-24 18:08:20,539][myceph][WARNING] Running command: /bin/chown -R ceph:ceph /var/lib/ceph/osd/ceph-0/
+[2022-06-24 18:08:20,542][myceph][WARNING] Running command: /usr/bin/ceph-osd --cluster ceph --osd-objectstore bluestore --mkfs -i 0 --monmap /var/lib/ceph/osd/ceph-0/activate.monmap --keyfile - --osd-data /var/lib/ceph/osd/ceph-0/ --osd-uuid d10a34ed-08f8-4ee8-b158-09c1911ae543 --setuser ceph --setgroup ceph
+[2022-06-24 18:08:22,259][myceph][WARNING] --> ceph-volume lvm prepare successful for: /dev/vdb
+[2022-06-24 18:08:22,260][myceph][WARNING] Running command: /bin/chown -R ceph:ceph /var/lib/ceph/osd/ceph-0
+[2022-06-24 18:08:22,260][myceph][WARNING] Running command: /usr/bin/ceph-bluestore-tool --cluster=ceph prime-osd-dir --dev /dev/ceph-6e12ce95-5d43-43c5-95fe-b00de6d0328c/osd-block-d10a34ed-08f8-4ee8-b158-09c1911ae543 --path /var/lib/ceph/osd/ceph-0 --no-mon-config
+[2022-06-24 18:08:22,331][myceph][WARNING] Running command: /bin/ln -snf /dev/ceph-6e12ce95-5d43-43c5-95fe-b00de6d0328c/osd-block-d10a34ed-08f8-4ee8-b158-09c1911ae543 /var/lib/ceph/osd/ceph-0/block
+[2022-06-24 18:08:22,332][myceph][WARNING] Running command: /bin/chown -h ceph:ceph /var/lib/ceph/osd/ceph-0/block
+[2022-06-24 18:08:22,332][myceph][WARNING] Running command: /bin/chown -R ceph:ceph /dev/dm-0
+[2022-06-24 18:08:22,332][myceph][WARNING] Running command: /bin/chown -R ceph:ceph /var/lib/ceph/osd/ceph-0
+[2022-06-24 18:08:22,348][myceph][WARNING] Running command: /bin/systemctl enable ceph-volume@lvm-0-d10a34ed-08f8-4ee8-b158-09c1911ae543
+[2022-06-24 18:08:22,350][myceph][WARNING]  stderr: Created symlink /etc/systemd/system/multi-user.target.wants/ceph-volume@lvm-0-d10a34ed-08f8-4ee8-b158-09c1911ae543.service → /lib/systemd/system/ceph-volume@.service.
+[2022-06-24 18:08:22,621][myceph][WARNING] Running command: /bin/systemctl enable --runtime ceph-osd@0
+[2022-06-24 18:08:22,621][myceph][WARNING]  stderr: Created symlink /run/systemd/system/ceph-osd.target.wants/ceph-osd@0.service → /lib/systemd/system/ceph-osd@.service.
+[2022-06-24 18:08:22,886][myceph][WARNING] Running command: /bin/systemctl start ceph-osd@0
+[2022-06-24 18:08:22,955][myceph][WARNING] --> ceph-volume lvm activate successful for osd ID: 0
+[2022-06-24 18:08:22,956][myceph][WARNING] --> ceph-volume lvm create successful for: /dev/vdb
+[2022-06-24 18:08:27,995][myceph][INFO  ] checking OSD status...
+[2022-06-24 18:08:27,995][myceph][DEBUG ] find the location of an executable
+[2022-06-24 18:08:27,997][myceph][INFO  ] Running command: sudo /usr/bin/ceph --cluster=ceph osd stat --format=json
+[2022-06-24 18:08:28,262][ceph_deploy.osd][DEBUG ] Host myceph is now ready for osd use.
+[2022-06-24 18:10:00,949][ceph_deploy.conf][DEBUG ] found configuration file at: /home/ubuntu/.cephdeploy.conf
+[2022-06-24 18:10:00,949][ceph_deploy.cli][INFO  ] Invoked (2.0.1): /usr/bin/ceph-deploy rgw create myceph
+[2022-06-24 18:10:00,950][ceph_deploy.cli][INFO  ] ceph-deploy options:
+[2022-06-24 18:10:00,950][ceph_deploy.cli][INFO  ]  username                      : None
+[2022-06-24 18:10:00,950][ceph_deploy.cli][INFO  ]  verbose                       : False
+[2022-06-24 18:10:00,950][ceph_deploy.cli][INFO  ]  rgw                           : [('myceph', 'rgw.myceph')]
+[2022-06-24 18:10:00,951][ceph_deploy.cli][INFO  ]  overwrite_conf                : False
+[2022-06-24 18:10:00,951][ceph_deploy.cli][INFO  ]  subcommand                    : create
+[2022-06-24 18:10:00,951][ceph_deploy.cli][INFO  ]  quiet                         : False
+[2022-06-24 18:10:00,951][ceph_deploy.cli][INFO  ]  cd_conf                       : <ceph_deploy.conf.cephdeploy.Conf instance at 0x7fa7ea361f00>
+[2022-06-24 18:10:00,951][ceph_deploy.cli][INFO  ]  cluster                       : ceph
+[2022-06-24 18:10:00,952][ceph_deploy.cli][INFO  ]  func                          : <function rgw at 0x7fa7eac8f950>
+[2022-06-24 18:10:00,952][ceph_deploy.cli][INFO  ]  ceph_conf                     : None
+[2022-06-24 18:10:00,952][ceph_deploy.cli][INFO  ]  default_release               : False
+[2022-06-24 18:10:00,952][ceph_deploy.rgw][DEBUG ] Deploying rgw, cluster ceph hosts myceph:rgw.myceph
+[2022-06-24 18:10:00,977][myceph][DEBUG ] connection detected need for sudo
+[2022-06-24 18:10:01,002][myceph][DEBUG ] connected to host: myceph 
+[2022-06-24 18:10:01,003][myceph][DEBUG ] detect platform information from remote host
+[2022-06-24 18:10:01,024][myceph][DEBUG ] detect machine type
+[2022-06-24 18:10:01,028][ceph_deploy.rgw][INFO  ] Distro info: Ubuntu 18.04 bionic
+[2022-06-24 18:10:01,029][ceph_deploy.rgw][DEBUG ] remote host will use systemd
+[2022-06-24 18:10:01,029][ceph_deploy.rgw][DEBUG ] deploying rgw bootstrap to myceph
+[2022-06-24 18:10:01,029][myceph][DEBUG ] write cluster configuration to /etc/ceph/{cluster}.conf
+[2022-06-24 18:10:01,031][myceph][WARNING] rgw keyring does not exist yet, creating one
+[2022-06-24 18:10:01,032][myceph][DEBUG ] create a keyring file
+[2022-06-24 18:10:01,033][myceph][DEBUG ] create path recursively if it doesn't exist
+[2022-06-24 18:10:01,035][myceph][INFO  ] Running command: sudo ceph --cluster ceph --name client.bootstrap-rgw --keyring /var/lib/ceph/bootstrap-rgw/ceph.keyring auth get-or-create client.rgw.myceph osd allow rwx mon allow rw -o /var/lib/ceph/radosgw/ceph-rgw.myceph/keyring
+[2022-06-24 18:10:01,306][myceph][INFO  ] Running command: sudo systemctl enable ceph-radosgw@rgw.myceph
+[2022-06-24 18:10:01,325][myceph][WARNING] Created symlink /etc/systemd/system/ceph-radosgw.target.wants/ceph-radosgw@rgw.myceph.service → /lib/systemd/system/ceph-radosgw@.service.
+[2022-06-24 18:10:01,695][myceph][INFO  ] Running command: sudo systemctl start ceph-radosgw@rgw.myceph
+[2022-06-24 18:10:01,739][myceph][INFO  ] Running command: sudo systemctl enable ceph.target
+[2022-06-24 18:10:02,165][ceph_deploy.rgw][INFO  ] The Ceph Object Gateway (RGW) is now running on host myceph and default port 7480

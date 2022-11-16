@@ -1,0 +1,35 @@
+{% extends 'base.html' %} {% block content %}
+<div class="login-wrapper">
+    <div class="card-title">
+        <h3>登录</h3>
+        <span>Login</span>
+    </div>
+
+    <form method="post" class="login-form">
+        <div class="form-item">
+            {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
+            <div class="info-wrapper">
+                <span class="login-singleline-span warning-span"></span> {{ message }}
+            </div>
+
+            {% endfor %} {% endif %} {% endwith %}
+        </div>
+        <div class="form-item">
+            <div class="login-singleline-input">
+                <span class="login-singleline-span username-span"></span>
+                <input class="login-singleline-input-inner" type="text" name="access_key" placeholder="Input access key" required>
+            </div>
+        </div>
+        <div class="form-item">
+            <div class="login-singleline-input">
+                <span class="login-singleline-span password-span"></span>
+                <input class="login-singleline-input-inner" type="password" name="secret_key" placeholder="Input secret key" required>
+            </div>
+        </div>
+        <input class="btn login-button" type="submit" name="submit" value="登 录">
+        <a href="{{url_for('register')}}">注册</a>
+    </form>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %} {% block content %}
+<div class="video-page-wrapper">
+    <video class="player-wrapper" controls="controls">
+        <source src="{{ src_url }}" type="video/mp4" />
+    </video>
+    <div class="player-title-wrapper">
+        <div class="video-title">
+            <h3>{{meta_data["title"]}}</h3>
+        </div>
+        <div class="video-meta-info">
+            <div class="video-meta-info-item">
+                <img src="{{ url_for('static', filename='/images/clock.png') }}" alt="发布时间："> {{meta_data["publish-time"]}}
+            </div>
+            <div class="video-meta-info-item">
+                <img src="{{ url_for('static', filename='/images/folder.png') }}" alt="科目类别："> {{meta_data["subject"]}}
+            </div>
+            <div class="video-meta-info-item">
+                <img src="{{ url_for('static', filename='/images/author.png') }}" alt="发布者："> {{meta_data["publisher"]}}
+            </div>
+            <div class="video-action-wrapper">
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

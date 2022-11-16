@@ -1,0 +1,150 @@
+{% extends 'base.html' %} {% block content %}
+<div class="index-page-wrapper">
+    <div class="index-intro-wrapper">
+        <video class="index-player-wrapper" controls="controls" autoplay>
+            <source src="static/videos/平台首页.mp4" type="video/mp4" />
+        </video>
+        <div class="index-intro-right">
+            <div class="slide-wrapper">
+                {% for video in client.list_objects(Bucket="videos")["Contents"][0:3] %}
+                <a class="slide" href="{{ url_for('video_page', vid=video['Key']) }}"><img class="slide-img" src="{{ client.generate_presigned_url('get_object', Params={'Bucket': 'images', 'Key': video['Key']}) }}"></a>
+                {% endfor %}
+                <div class="slide-switch-wrapper">
+                    <div class="slide-switch" id="slide-switch-1">
+                    </div>
+                    <div class="slide-switch" id="slide-switch-2">
+                    </div>
+                    <div class="slide-switch" id="slide-switch-3">
+                    </div>
+                </div>
+
+            </div>
+            <div class="index-info-wrapper">
+                <div class="card-title">
+                    <h4>平台介绍</h4>
+                    <span class="small-span">Introduction</span>
+                    <div class="index-info-text">该平台是以ceph对象文件系统为载体的Video-on-Demand (VoD)教学资源平台，实现了简单的用户注册与登录、视频列表与播放等功能。网站采用Python-Flask轻量级框架作为后端支持进行搭建，并采用boto3来与ceph提供的s3对象存储服务进行交互，其中，视频文件与视频封面文件分别存储于由用户admin所持有的bucket <a href="http://81.68.255.144:7480/videos/" target="_blank">videos</a>与
+                        <a href="http://81.68.255.144:7480/images/" target="_blank">images</a>中。</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="video-card-list-wrapper">
+        <div class="video-card-list-title">
+            <div class="card-title">
+                <h3>课程列表</h3>
+                <span>Courses</span>
+            </div>
+        </div>
+        <div class="video-card-list">
+            {% for video in client.list_objects(Bucket="videos")["Contents"] %}
+            <div class="video-card-item">
+                <a href="{{ url_for('video_page', vid=video['Key']) }}"><img class="front-page" src="{{ client.generate_presigned_url('get_object', Params={'Bucket': 'images', 'Key': video['Key']}) }}" /></a>
+                <div class="video-card-info">
+                    <a href="{{ url_for('video_page', vid=video['Key']) }}">
+                        <h3 class="video-card-info">{{ client.head_object(Bucket="videos", Key=video["Key"])["Metadata"]["title"] }}</h3>
+                    </a>
+                </div>
+
+            </div> {% endfor %}
+        </div>
+    </div>
+
+</div>
+<script type="text/javascript">
+    onload = function() {
+        var arr = document.getElementsByClassName("slide");
+        for (var i = 0; i < arr.length; i++) {
+            arr[i].style.left = i * 100 + "%";
+        }
+    }
+
+    function LeftMove() {
+        var arr = document.getElementsByClassName("slide");
+        for (var i = 0; i < arr.length; i++) {
+            var left = parseInt(arr[i].style.left);
+            var delta = 100 / 10;
+            left -= delta;
+            if (left == -100) {
+                left = (arr.length - 1) * 100;
+                clearInterval(moveId);
+            }
+            arr[i].style.left = left + "%";
+        }
+    }
+
+    function divInterval() {
+        slideId = slideId + 1;
+        slideId = slideId % 3;
+        console.log(slideId);
+        var btns = document.getElementsByClassName("slide-switch");
+        btns[slideId].classList.toggle("selected");
+        btns[(slideId + 2) % 3].classList.toggle("selected");
+        moveId = setInterval(LeftMove, 1);
+    }
+
+    slideId = 0;
+    document.getElementById("slide-switch-1").classList.toggle("selected");
+    timeId = setInterval(divInterval, 3500);
+
+    function stop() {
+        clearInterval(timeId);
+    }
+
+    function start() {
+        clearInterval(timeId);
+        timeId = setInterval(divInterval, 3500);
+    }
+
+    onblur = function() {
+        stop();
+    }
+
+    onfocus = function() {
+        start();
+    }
+
+    document.getElementById("slide-switch-1").onclick = function() {
+        if (slideId != 0) {
+            document.getElementById("slide-switch-" + (slideId + 1)).classList.toggle("selected");
+            this.classList.toggle("selected");
+            slideId = 0;
+        }
+        var arr = document.getElementsByClassName("slide");
+        for (var i = 0; i < arr.length; i++) {
+            arr[i].style.left = i * 100 + "%";
+        }
+        clearInterval(timeId);
+        timeId = setInterval(divInterval, 3500);
+    }
+    document.getElementById("slide-switch-2").onclick = function() {
+        if (slideId != 1) {
+            document.getElementById("slide-switch-" + (slideId + 1)).classList.toggle("selected");
+            this.classList.toggle("selected");
+            slideId = 1;
+        }
+        var arr = document.getElementsByClassName("slide");
+        arr[1].style.left = 0 + "%";
+        arr[2].style.left = 100 + "%";
+        arr[0].style.left = 200 + "%";
+
+        clearInterval(timeId);
+        timeId = setInterval(divInterval, 3500);
+    }
+    document.getElementById("slide-switch-3").onclick = function() {
+        if (slideId != 2) {
+            document.getElementById("slide-switch-" + (slideId + 1)).classList.toggle("selected");
+            this.classList.toggle("selected");
+            slideId = 2;
+        }
+        var arr = document.getElementsByClassName("slide");
+        arr[2].style.left = 0 + "%";
+        arr[0].style.left = 100 + "%";
+        arr[1].style.left = 200 + "%";
+
+        clearInterval(timeId);
+        timeId = setInterval(divInterval, 3500);
+    }
+</script>
+{% endblock %}
